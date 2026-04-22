@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import { connect } from "mongoose";
 import { config } from "dotenv";
+import registerRouter from './APIs/registerAPI.js';
 
 config();
 
@@ -34,8 +35,8 @@ const connectdb = async () => {
 
 connectdb();
 
-// Routes (To be added)
-// app.use('/api/users', userRoute);
+// Routes 
+app.use("/register", registerRouter);
 
 // Invalid path handler
 app.use((req, res) => {
