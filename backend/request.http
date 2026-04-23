@@ -1,4 +1,4 @@
-### Test 1: Successful Registration
+### Registration
 POST http://localhost:4000/register
 Content-Type: application/json
 
@@ -9,24 +9,14 @@ Content-Type: application/json
     "role": "USER"
 }
 
-### Test 2: Fail - Wrong Email Domain (Regex Test)
-POST http://localhost:4000/register
+### Login
+POST http://localhost:4000/login
 Content-Type: application/json
 
 {
-    "username": "Stranger",
-    "email": "hacker@gmail.com",
-    "password": "password123",
-    "role": "USER"
+    "email": "kapish@anurag.edu.in",
+    "password": "securePassword123"
 }
 
-### Test 3: Fail - Invalid Role
-POST http://localhost:4000/register
-Content-Type: application/json
-
-{
-    "username": "AdminGuy",
-    "email": "admin@anurag.edu.in",
-    "password": "password123",
-    "role": "SUPERUSER"
-}
+### Logout
+POST http://localhost:4000/logout

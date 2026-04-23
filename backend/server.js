@@ -5,6 +5,8 @@ import helmet from 'helmet';
 import { connect } from "mongoose";
 import { config } from "dotenv";
 import registerRouter from './APIs/registerAPI.js';
+import loginRouter from './APIs/loginAPI.js';
+import logoutRouter from './APIs/logoutAPI.js';
 
 config();
 
@@ -37,6 +39,8 @@ connectdb();
 
 // Routes 
 app.use("/register", registerRouter);
+app.use("/login", loginRouter);
+app.use("/logout", logoutRouter);
 
 // Invalid path handler
 app.use((req, res) => {
