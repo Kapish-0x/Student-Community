@@ -20,3 +20,22 @@ Content-Type: application/json
 
 ### Logout
 POST http://localhost:4000/logout
+
+### 2. Create or Update Profile
+POST http://localhost:4000/profile/save
+Content-Type: application/json
+
+{
+    "department": "CSE",
+    "year": 3,
+    "bio": "MERN Stack Developer | Cybersecurity Enthusiast | Hackathon Lead",
+    "skills": ["React", "Node.js", "Express", "MongoDB", "Socket.io", "JWT"],
+    "socialLinks": {
+        "github": "https://github.com/kapish",
+        "linkedin": "https://linkedin.com/in/kapish"
+    },
+    "isOpenForTeams": true
+}
+
+### 3. Get My Profile 
+GET http://localhost:4000/profile/me

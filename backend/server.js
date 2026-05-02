@@ -7,6 +7,7 @@ import { config } from "dotenv";
 import registerRouter from './APIs/registerAPI.js';
 import loginRouter from './APIs/loginAPI.js';
 import logoutRouter from './APIs/logoutAPI.js';
+import profileRouter from './APIs/profileAPI.js';
 
 config();
 
@@ -41,6 +42,7 @@ connectdb();
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
+app.use("/profile", profileRouter);
 
 // Invalid path handler
 app.use((req, res) => {
