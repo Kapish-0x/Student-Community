@@ -8,6 +8,7 @@ import registerRouter from './APIs/registerAPI.js';
 import loginRouter from './APIs/loginAPI.js';
 import logoutRouter from './APIs/logoutAPI.js';
 import profileRouter from './APIs/profileAPI.js';
+import postRouter from './APIs/postAPI.js';
 
 config();
 
@@ -38,11 +39,13 @@ const connectdb = async () => {
 
 connectdb();
 
+app.use(express.static("public"));
 // Routes 
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logoutRouter);
 app.use("/profile", profileRouter);
+app.use("/posts", profileRouter);
 
 // Invalid path handler
 app.use((req, res) => {
